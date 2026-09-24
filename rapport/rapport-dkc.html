@@ -1,0 +1,1771 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rapport de stage — DKC (Diabète Kiné Care)</title>
+    <link rel="stylesheet" href="assets/report.css" />
+  </head>
+  <body>
+    <!-- =====================================================================
+         INFORMATIONS À COMPLÉTER (recherchez « fill » dans ce fichier) :
+         nom de l'étudiant, établissement, filière, promotion, dates de stage,
+         encadrants, membres du jury et date de soutenance.
+         Elles ne sont volontairement pas inventées.
+         ===================================================================== -->
+
+    <!-- ============================ P.1 COUVERTURE ===================== -->
+    <section class="page cover">
+      <div class="cover-deco one"></div>
+      <div class="cover-deco two"></div>
+      <div class="cover-inner">
+        <div class="cover-top">
+          Ministère de l'Éducation Nationale, du Préscolaire et des Sports<br />
+          <span class="fill">Centre BTS — Établissement</span><br />
+          Brevet de Technicien Supérieur — <span class="fill">Filière</span>
+        </div>
+
+        <div class="cover-logo">
+          <img src="assets/logo-dkc.jpg" alt="Logo DKC — Diabète Kiné Care" />
+        </div>
+
+        <h1>Rapport de stage</h1>
+        <p class="subtitle">Promotion <span class="fill">20XX – 20XX</span></p>
+        <div style="text-align: center">
+          <span class="project">DKC — Diabète Kiné Care · Application web de gestion du cabinet</span>
+          <p class="subtitle" style="font-size: 10pt; margin-top: 6mm">
+            Site vitrine · Prise de rendez-vous en ligne · Espace patient · Tableau de bord du cabinet
+          </p>
+        </div>
+
+        <div class="cover-meta">
+          <div>
+            <h2>Présenté par</h2>
+            <p><span class="fill">NOM Prénom de l'étudiant</span></p>
+          </div>
+          <div>
+            <h2>Lieu du stage</h2>
+            <p>Cabinet DKC — Diabète Kiné Care</p>
+            <p class="small">18 Rue Ibnou Rochd, V.N., Fès</p>
+          </div>
+          <div>
+            <h2>Encadré par</h2>
+            <p><span class="fill">Prof. NOM</span> — établissement</p>
+            <p>Mme Rihab — kinésithérapeute, cabinet DKC</p>
+          </div>
+          <div>
+            <h2>Période du stage</h2>
+            <p><span class="fill">du JJ/MM/AAAA au JJ/MM/AAAA</span></p>
+          </div>
+          <div class="cover-jury">
+            <h2>Soutenu le <span class="fill">JJ/MM/AAAA</span> devant le jury composé de</h2>
+            <p class="small">
+              <span class="fill">Pr. NOM Prénom</span> · <span class="fill">Pr. NOM Prénom</span> ·
+              <span class="fill">Pr. NOM Prénom</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ P.2 SOMMAIRE ======================= -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Sommaire</span>
+      </div>
+      <div class="content">
+        <h2 class="section">Sommaire</h2>
+
+        <div class="toc-item chapter"><span class="num">—</span><span>Remerciements</span><span class="dots"></span><span>3</span></div>
+
+        <div class="toc-item chapter"><span class="num">A.</span><span>Contexte du stage et présentation du cabinet</span><span class="dots"></span><span>4</span></div>
+        <div class="toc-item sub"><span>I. Introduction</span><span class="dots"></span><span>4</span></div>
+        <div class="toc-item sub"><span>II. Présentation du cabinet DKC</span><span class="dots"></span><span>5</span></div>
+
+        <div class="toc-item chapter"><span class="num">B.</span><span>L'offre de soins du cabinet</span><span class="dots"></span><span>6</span></div>
+        <div class="toc-item sub"><span>III. DKC en chiffres</span><span class="dots"></span><span>6</span></div>
+        <div class="toc-item sub"><span>IV. Le catalogue des prestations</span><span class="dots"></span><span>7</span></div>
+
+        <div class="toc-item chapter"><span class="num">C.</span><span>Organisation et déroulement du stage</span><span class="dots"></span><span>9</span></div>
+        <div class="toc-item sub"><span>V. Organisation du cabinet</span><span class="dots"></span><span>9</span></div>
+        <div class="toc-item sub"><span>VI. Déroulement et missions</span><span class="dots"></span><span>10</span></div>
+
+        <div class="toc-item chapter"><span class="num">D.</span><span>Le projet : application web DKC</span><span class="dots"></span><span>11</span></div>
+        <div class="toc-item sub"><span>VII. Problématique et objectifs</span><span class="dots"></span><span>11</span></div>
+        <div class="toc-item sub"><span>VIII. Cahier des charges</span><span class="dots"></span><span>12</span></div>
+        <div class="toc-item sub"><span>IX. Architecture technique</span><span class="dots"></span><span>13</span></div>
+        <div class="toc-item sub"><span>X. Technologies utilisées</span><span class="dots"></span><span>14</span></div>
+        <div class="toc-item sub"><span>XI. Modèle de données</span><span class="dots"></span><span>15</span></div>
+        <div class="toc-item sub"><span>XII. Le moteur de rendez-vous</span><span class="dots"></span><span>17</span></div>
+        <div class="toc-item sub"><span>XIII. La sécurité de l'application</span><span class="dots"></span><span>18</span></div>
+        <div class="toc-item sub"><span>XIV. Réalisation : le site public</span><span class="dots"></span><span>19</span></div>
+        <div class="toc-item sub"><span>XV. Réalisation : l'espace patient</span><span class="dots"></span><span>21</span></div>
+        <div class="toc-item sub"><span>XVI. Réalisation : l'espace administrateur</span><span class="dots"></span><span>22</span></div>
+        <div class="toc-item sub"><span>XVII. Tests et qualité</span><span class="dots"></span><span>23</span></div>
+        <div class="toc-item sub"><span>XVIII. Difficultés rencontrées</span><span class="dots"></span><span>24</span></div>
+
+        <div class="toc-item chapter"><span class="num">—</span><span>Conclusion</span><span class="dots"></span><span>25</span></div>
+        <div class="toc-item chapter"><span class="num">—</span><span>Annexes</span><span class="dots"></span><span>26</span></div>
+        <div class="toc-item chapter"><span class="num">—</span><span>Glossaire et webographie</span><span class="dots"></span><span>28</span></div>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.3 REMERCIEMENTS =================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Remerciements</span>
+      </div>
+      <div class="content">
+        <h2 class="section">Remerciements</h2>
+
+        <p class="lead">
+          Avant tout développement sur cette expérience professionnelle, il paraît opportun de
+          commencer ce rapport par des remerciements à celles et ceux qui m'ont beaucoup appris au
+          cours de ce stage, et qui ont contribué à en faire un moment particulièrement profitable.
+        </p>
+
+        <p>
+          Je remercie tout d'abord Madame <strong>Rihab</strong>, kinésithérapeute et fondatrice du
+          cabinet <strong>DKC — Diabète Kiné Care</strong> à Fès, pour son accueil, sa disponibilité
+          et la confiance qu'elle m'a accordée en me confiant la conception de l'application de
+          gestion du cabinet. Les échanges autour de son organisation quotidienne, de la prise de
+          rendez-vous et du suivi des patients ont constitué la matière même de ce projet.
+        </p>
+
+        <p>
+          Je remercie également <span class="fill">Prof. NOM Prénom</span>, mon encadrant
+          pédagogique, pour ses conseils méthodologiques, sa rigueur et son accompagnement tout au
+          long de la période de stage et de la rédaction de ce rapport.
+        </p>
+
+        <p>
+          Mes remerciements vont aussi à l'ensemble de l'équipe pédagogique de
+          <span class="fill">l'établissement</span>, dont les enseignements en bases de données, en
+          développement web et en génie logiciel ont trouvé ici une application directe et concrète.
+        </p>
+
+        <p>
+          Enfin, je remercie ma famille et mes camarades de promotion pour leur soutien constant
+          durant cette période.
+        </p>
+
+        <div class="note">
+          <strong>Note sur ce rapport.</strong> Toutes les données présentées (prestations, tarifs,
+          durées, adresse du cabinet) proviennent directement de la base de données de
+          l'application réalisée. Aucune information commerciale, médicale ou chiffrée n'a été
+          inventée pour les besoins de ce document.
+        </div>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.4 CHAPITRE A ===================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre A · Contexte</span>
+      </div>
+      <div class="content">
+        <div class="chapter-banner">
+          <div class="label">Chapitre A</div>
+          <h2>Contexte du stage et présentation du cabinet</h2>
+        </div>
+
+        <h2 class="section">I. Introduction</h2>
+
+        <p>
+          Du <span class="fill">JJ/MM/AAAA</span> au <span class="fill">JJ/MM/AAAA</span>, j'ai
+          effectué mon stage au sein du cabinet <strong>DKC — Diabète Kiné Care</strong>, cabinet de
+          kinésithérapie situé en Ville Nouvelle à Fès. Ce stage m'a permis de découvrir le
+          fonctionnement quotidien d'une structure de soins de proximité : accueil des patients,
+          organisation des séances, gestion de l'agenda et suivi des prises en charge.
+        </p>
+
+        <p>
+          Au-delà de l'observation, ce stage avait un objectif concret : concevoir et développer une
+          <strong>application web complète</strong> permettant au cabinet de présenter son activité
+          en ligne, de recevoir des demandes de rendez-vous et de gérer l'ensemble de son planning,
+          de ses patients et de ses prestations.
+        </p>
+
+        <h3>Objectifs du stage</h3>
+        <ul>
+          <li>
+            Comprendre l'organisation réelle d'un cabinet de kinésithérapie et les contraintes de
+            son activité (agenda unique, déplacements à domicile, suivi des séances).
+          </li>
+          <li>
+            Traduire ces contraintes en <strong>règles de gestion</strong> précises, puis en un
+            modèle de données relationnel cohérent.
+          </li>
+          <li>
+            Développer une application web moderne, sécurisée et responsive, utilisable aussi bien
+            par les patients que par la praticienne.
+          </li>
+          <li>
+            Mettre en pratique les compétences acquises en formation : bases de données, SQL,
+            développement web, validation des données, sécurité et tests.
+          </li>
+        </ul>
+
+        <h3>Démarche suivie</h3>
+        <div class="flow">
+          <div class="step"><span class="n">1</span><br />Observation et recueil des besoins</div>
+          <div class="step"><span class="n">2</span><br />Modélisation de la base de données</div>
+          <div class="step"><span class="n">3</span><br />Développement par phases</div>
+          <div class="step"><span class="n">4</span><br />Tests et validation</div>
+        </div>
+
+        <p class="small muted">
+          Le travail a été organisé en phases successives et validées une à une : architecture, base
+          de données et sécurité, authentification, site public, espace patient, espace
+          administrateur, puis tests et finalisation.
+        </p>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.5 PRÉSENTATION =================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre A · Le cabinet</span>
+      </div>
+      <div class="content">
+        <h2 class="section">II. Présentation du cabinet DKC</h2>
+
+        <p>
+          <strong>DKC — Diabète Kiné Care</strong> est le cabinet de kinésithérapie de Madame
+          <strong>Rihab</strong>, kinésithérapeute, installé à Fès. Le cabinet réunit trois grands
+          domaines d'activité : la <strong>kinésithérapie et la rééducation</strong>, les
+          <strong>massages thérapeutiques</strong> et un <strong>accompagnement spécifique des
+          personnes diabétiques</strong>, qui donne son nom au cabinet.
+        </p>
+
+        <div class="grid-2">
+          <div class="card tint">
+            <h4>Identité</h4>
+            <table class="compact" style="margin: 0">
+              <tr>
+                <td style="width: 34%"><strong>Nom</strong></td>
+                <td>DKC — Diabète Kiné Care</td>
+              </tr>
+              <tr>
+                <td><strong>Fondatrice</strong></td>
+                <td>Rihab, kinésithérapeute</td>
+              </tr>
+              <tr>
+                <td><strong>Ville</strong></td>
+                <td>Fès, Maroc</td>
+              </tr>
+              <tr>
+                <td><strong>Adresse</strong></td>
+                <td>18 Rue Ibnou Rochd, V.N., Étage 1, Bureau 3 — 30000 Fès</td>
+              </tr>
+              <tr>
+                <td><strong>Lieux de soin</strong></td>
+                <td>Au cabinet et à domicile</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="card">
+            <h4>Les trois domaines de soin</h4>
+            <p class="small">
+              <span class="tag">Soins du diabète</span> Programmes de prévention des complications,
+              rééducation adaptée, prévention des plaies et soins des pieds, mobilité et souplesse,
+              gestion de la douleur.
+            </p>
+            <p class="small">
+              <span class="tag">Massages</span> Massages relaxants, thérapeutiques, sportifs, thaï et
+              drainage lymphatique, à la séance ou en forfait de dix séances.
+            </p>
+            <p class="small" style="margin-bottom: 0">
+              <span class="tag">Hijama</span> Séances de hijama humide et sèche, réalisées au
+              cabinet.
+            </p>
+          </div>
+        </div>
+
+        <h3>Particularité : un agenda unique pour deux lieux</h3>
+        <p>
+          Le cabinet est animé par <strong>une seule praticienne</strong>. Les séances au cabinet et
+          les visites à domicile se déroulent donc sur un <strong>agenda unique</strong> : deux
+          rendez-vous ne peuvent jamais se chevaucher, même s'ils ont lieu à des endroits
+          différents. Cette contrainte, simple à énoncer mais essentielle, a directement orienté la
+          conception de la base de données du projet (voir chapitre D, section XII).
+        </p>
+
+        <h3>Le besoin exprimé</h3>
+        <p>
+          Avant ce projet, la prise de rendez-vous reposait sur les appels téléphoniques et les
+          messages, et le suivi des séances sur des notes personnelles. Le cabinet souhaitait
+          disposer d'un outil permettant de <strong>présenter ses prestations en ligne</strong>, de
+          <strong>recevoir des demandes de rendez-vous</strong> sur des créneaux réellement
+          disponibles, et de <strong>suivre l'ensemble de son planning</strong> depuis un seul
+          tableau de bord.
+        </p>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.6 DKC EN CHIFFRES ================ -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre B · L'offre de soins</span>
+      </div>
+      <div class="content">
+        <div class="chapter-banner">
+          <div class="label">Chapitre B</div>
+          <h2>L'offre de soins du cabinet</h2>
+        </div>
+
+        <h2 class="section">III. DKC en chiffres</h2>
+
+        <p>
+          Les chiffres ci-dessous décrivent l'offre de soins telle qu'elle est enregistrée dans la
+          base de données de l'application, et telle qu'elle s'affiche sur le site public.
+        </p>
+
+        <div class="grid-4">
+          <div class="stat"><div class="value">18</div><div class="label">prestations proposées</div></div>
+          <div class="stat"><div class="value">3</div><div class="label">domaines de soin actifs</div></div>
+          <div class="stat"><div class="value">2</div><div class="label">lieux : cabinet et domicile</div></div>
+          <div class="stat"><div class="value">30′</div><div class="label">pas de l'agenda</div></div>
+        </div>
+
+        <div class="grid-4" style="margin-top: 3.5mm">
+          <div class="stat"><div class="value">6</div><div class="label">programmes diabète</div></div>
+          <div class="stat"><div class="value">10</div><div class="label">prestations de massage</div></div>
+          <div class="stat"><div class="value">2</div><div class="label">séances de hijama</div></div>
+          <div class="stat"><div class="value">60</div><div class="label">jours de réservation à l'avance</div></div>
+        </div>
+
+        <h3>Répartition des prestations par domaine</h3>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 28%">Domaine</th>
+              <th style="width: 12%">Nombre</th>
+              <th style="width: 20%">Durée des séances</th>
+              <th>Lieux proposés</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Soins du diabète</strong></td>
+              <td>6</td>
+              <td>30 à 45 min</td>
+              <td>Cabinet</td>
+            </tr>
+            <tr>
+              <td><strong>Massages</strong></td>
+              <td>10 (dont 5 forfaits)</td>
+              <td>60 min</td>
+              <td>Cabinet, et domicile pour 8 d'entre elles</td>
+            </tr>
+            <tr>
+              <td><strong>Hijama</strong></td>
+              <td>2</td>
+              <td>45 min</td>
+              <td>Cabinet</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Fourchette des tarifs pratiqués</h3>
+        <p class="small">
+          Les tarifs affichés sur le site proviennent tous de la base de données : ils s'échelonnent
+          de <strong>150 MAD</strong> pour une séance de hijama, une consultation diabète ou un
+          massage thaï, à <strong>2 700 MAD</strong> pour le forfait de dix séances de massage
+          sportif. Une prestation dont le tarif n'est pas renseigné s'affiche « Tarif sur demande »,
+          jamais avec un prix approximatif.
+        </p>
+
+        <div class="note">
+          <strong>Une quatrième catégorie est prévue dans la base de données :</strong> la
+          <em>kinésithérapie</em> au sens strict. Elle est déjà disponible dans l'application mais ne
+          contient encore aucune prestation publiée : le cabinet pourra l'alimenter lui-même depuis
+          l'espace d'administration, sans aucune intervention technique.
+        </div>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.7 CATALOGUE 1 ==================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre B · Catalogue</span>
+      </div>
+      <div class="content">
+        <h2 class="section">IV. Le catalogue des prestations</h2>
+
+        <p>
+          Le catalogue complet du cabinet est stocké dans la table <code>services</code> de la base
+          de données. Chaque prestation porte sa catégorie, sa durée, son tarif, son type (séance ou
+          forfait) et les lieux où elle est proposée. Les tarifs sont exprimés en dirhams (MAD).
+        </p>
+
+        <h3>Séances à l'unité</h3>
+        <table class="compact">
+          <thead>
+            <tr>
+              <th style="width: 34%">Prestation</th>
+              <th style="width: 22%">Domaine</th>
+              <th style="width: 12%">Durée</th>
+              <th style="width: 14%">Tarif</th>
+              <th>Lieux</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Consultation Diabète</td><td>Soins du diabète</td><td>30 min</td><td>150 MAD</td><td>Cabinet</td></tr>
+            <tr><td>Hijama Humide</td><td>Hijama</td><td>45 min</td><td>150 MAD</td><td>Cabinet</td></tr>
+            <tr><td>Hijama Sèche</td><td>Hijama</td><td>45 min</td><td>150 MAD</td><td>Cabinet</td></tr>
+            <tr><td>Massage Thaï</td><td>Massages</td><td>60 min</td><td>150 MAD</td><td>Cabinet</td></tr>
+            <tr><td>Massage Relaxant</td><td>Massages</td><td>60 min</td><td>200 MAD</td><td>Cabinet · Domicile</td></tr>
+            <tr><td>Massage Lymphatique</td><td>Massages</td><td>60 min</td><td>200 MAD</td><td>Cabinet · Domicile</td></tr>
+            <tr><td>Massage Thérapeutique</td><td>Massages</td><td>60 min</td><td>250 MAD</td><td>Cabinet · Domicile</td></tr>
+            <tr><td>Massage Sportif</td><td>Massages</td><td>60 min</td><td>300 MAD</td><td>Cabinet · Domicile</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Forfaits de dix séances</h3>
+        <table class="compact">
+          <thead>
+            <tr>
+              <th style="width: 44%">Forfait</th>
+              <th style="width: 12%">Séances</th>
+              <th style="width: 14%">Tarif</th>
+              <th>Lieux</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Pack 10 séances — Massage Thaï</td><td>10</td><td>1 300 MAD</td><td>Cabinet</td></tr>
+            <tr><td>Pack 10 séances — Massage Relaxant</td><td>10</td><td>1 700 MAD</td><td>Cabinet · Domicile</td></tr>
+            <tr><td>Pack 10 séances — Massage Lymphatique</td><td>10</td><td>1 700 MAD</td><td>Cabinet · Domicile</td></tr>
+            <tr><td>Pack 10 séances — Massage Thérapeutique</td><td>10</td><td>2 200 MAD</td><td>Cabinet · Domicile</td></tr>
+            <tr><td>Pack 10 séances — Massage Sportif</td><td>10</td><td>2 700 MAD</td><td>Cabinet · Domicile</td></tr>
+          </tbody>
+        </table>
+
+        <p class="small muted">
+          Les séances d'un forfait se réservent <strong>une par une</strong> depuis l'espace
+          patient : l'application ne décompte pas automatiquement les séances restantes, ce suivi
+          restant à la charge du cabinet.
+        </p>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.8 CATALOGUE 2 ==================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre B · Catalogue</span>
+      </div>
+      <div class="content">
+        <h3>Programmes d'accompagnement du diabète</h3>
+        <table class="compact">
+          <thead>
+            <tr>
+              <th style="width: 44%">Programme</th>
+              <th style="width: 14%">Durée</th>
+              <th style="width: 16%">Tarif</th>
+              <th>Lieu</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Prévention des plaies et soins des pieds</td><td>45 min</td><td>1 300 MAD</td><td>Cabinet</td></tr>
+            <tr><td>Gestion de la douleur</td><td>45 min</td><td>1 700 MAD</td><td>Cabinet</td></tr>
+            <tr><td>Mobilité et souplesse</td><td>45 min</td><td>2 400 MAD</td><td>Cabinet</td></tr>
+            <tr><td>Prévention des complications diabétiques</td><td>45 min</td><td>2 500 MAD</td><td>Cabinet</td></tr>
+            <tr><td>Rééducation pour les diabétiques</td><td>45 min</td><td>2 500 MAD</td><td>Cabinet</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Ce que le modèle de données permet</h3>
+        <p>
+          La structure retenue rend le catalogue entièrement modifiable par le cabinet, sans
+          modification de code :
+        </p>
+
+        <div class="grid-2">
+          <div class="card">
+            <h4>Champs disponibles</h4>
+            <ul class="small" style="margin-bottom: 0">
+              <li>Nom, description et domaine</li>
+              <li>Durée en minutes (multiple de 15)</li>
+              <li>Tarif, ou <em>tarif sur demande</em> si le prix est laissé vide</li>
+              <li>Type : séance ou forfait, avec nombre de séances</li>
+              <li>Disponibilité au cabinet et/ou à domicile</li>
+              <li>Prestation active ou désactivée</li>
+            </ul>
+          </div>
+          <div class="card sand">
+            <h4>Deux garde-fous importants</h4>
+            <p class="small">
+              Une prestation <strong>déjà utilisée par un rendez-vous ne peut pas être
+              supprimée</strong> : la base de données refuse la suppression afin que l'historique
+              des séances ne pointe jamais dans le vide. Le cabinet la
+              <strong>désactive</strong> : elle disparaît du site mais reste attachée aux
+              rendez-vous passés.
+            </p>
+            <p class="small" style="margin-bottom: 0">
+              Un tarif vide n'est jamais remplacé par une valeur inventée : l'application affiche
+              explicitement <em>« Tarif sur demande »</em>.
+            </p>
+          </div>
+        </div>
+
+        <div class="note">
+          <strong>Les horaires d'ouverture ne sont pas figés dans le site.</strong> Ils sont saisis
+          par le cabinet dans l'espace d'administration, sous forme d'horaires hebdomadaires et
+          d'exceptions datées (jour fermé ou horaires particuliers). Les créneaux affichés aux
+          patients en découlent directement, ce qui évite d'annoncer publiquement des horaires qui
+          ne seraient pas respectés.
+        </div>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.9 CHAPITRE C ===================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre C · Organisation</span>
+      </div>
+      <div class="content">
+        <div class="chapter-banner">
+          <div class="label">Chapitre C</div>
+          <h2>Organisation et déroulement du stage</h2>
+        </div>
+
+        <h2 class="section">V. Organisation du cabinet</h2>
+
+        <p>
+          DKC est une structure de proximité de petite taille : l'organisation y est simple et
+          directe, ce qui constitue une différence importante avec une entreprise industrielle
+          organisée en divisions et en services. La praticienne assure elle-même l'essentiel des
+          fonctions, ce qui rend la <strong>qualité de l'agenda</strong> déterminante.
+        </p>
+
+        <div class="grid-2">
+          <div class="card tint">
+            <h4>Fonctions assurées au cabinet</h4>
+            <ul class="small" style="margin-bottom: 0">
+              <li><strong>Soins</strong> : séances au cabinet et visites à domicile.</li>
+              <li><strong>Agenda</strong> : réception des demandes, confirmation, rappel.</li>
+              <li><strong>Suivi des patients</strong> : historique des séances réalisées.</li>
+              <li><strong>Catalogue et tarifs</strong> : mise à jour de l'offre de soins.</li>
+              <li><strong>Disponibilités</strong> : horaires habituels, congés, fermetures.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Traduction dans l'application</h4>
+            <p class="small">
+              Ces fonctions se retrouvent une à une dans l'espace d'administration : tableau de
+              bord, planning du jour, gestion des rendez-vous, fiches patients, prestations et
+              disponibilités.
+            </p>
+            <p class="small" style="margin-bottom: 0">
+              L'application distingue seulement <strong>deux rôles</strong> : le
+              <em>patient</em> et l'<em>administrateur</em> (la praticienne). Ce choix reflète la
+              taille réelle de la structure : inventer une hiérarchie de rôles aurait compliqué le
+              projet sans rien apporter.
+            </p>
+          </div>
+        </div>
+
+        <h3>Les deux rôles de l'application</h3>
+        <div class="flow">
+          <div class="step">
+            <span class="n">P</span><br /><strong>Patient</strong><br />
+            <span class="small">Consulte les prestations, réserve, suit et annule ses rendez-vous,
+            gère son profil.</span>
+          </div>
+          <div class="step">
+            <span class="n">A</span><br /><strong>Administrateur</strong><br />
+            <span class="small">Consulte le planning, confirme et clôture les rendez-vous, gère les
+            patients, les prestations et les disponibilités.</span>
+          </div>
+        </div>
+
+        <p class="small muted">
+          Un compte administrateur ne peut pas être créé depuis le formulaire d'inscription : toute
+          inscription crée obligatoirement un compte patient. La promotion d'un compte en
+          administrateur se fait uniquement en base de données, de façon volontaire et tracée.
+        </p>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.10 DÉROULEMENT =================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre C · Déroulement</span>
+      </div>
+      <div class="content">
+        <h2 class="section">VI. Déroulement du stage et missions</h2>
+
+        <p>
+          Le stage s'est déroulé en plusieurs étapes, chacune validée avant de passer à la suivante.
+          Cette organisation par phases a permis de ne jamais construire une fonctionnalité sur des
+          bases incertaines, et de pouvoir expliquer chaque décision technique.
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 16%">Étape</th>
+              <th style="width: 40%">Travail réalisé</th>
+              <th>Résultat</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Observation</strong></td>
+              <td>Découverte du cabinet, des prestations, du déroulement d'une séance et de la prise de rendez-vous actuelle.</td>
+              <td>Liste des besoins et des contraintes réelles</td>
+            </tr>
+            <tr>
+              <td><strong>Conception</strong></td>
+              <td>Choix de l'architecture, modélisation de la base de données, définition des règles de gestion.</td>
+              <td>Schéma relationnel et règles validées</td>
+            </tr>
+            <tr>
+              <td><strong>Base de données</strong></td>
+              <td>Écriture des migrations SQL : tables, contraintes, sécurité par ligne, fonctions de réservation.</td>
+              <td>Base reproductible en une commande</td>
+            </tr>
+            <tr>
+              <td><strong>Authentification</strong></td>
+              <td>Inscription, connexion, déconnexion, réinitialisation du mot de passe, protection des espaces.</td>
+              <td>Comptes patients et accès administrateur</td>
+            </tr>
+            <tr>
+              <td><strong>Site public</strong></td>
+              <td>Accueil, prestations, fiche prestation, à propos, contact, design et responsive.</td>
+              <td>Vitrine complète du cabinet</td>
+            </tr>
+            <tr>
+              <td><strong>Espace patient</strong></td>
+              <td>Tableau de bord, réservation en quatre étapes, historique, annulation, profil.</td>
+              <td>Parcours patient de bout en bout</td>
+            </tr>
+            <tr>
+              <td><strong>Espace admin</strong></td>
+              <td>Tableau de bord, planning, rendez-vous, patients, prestations, disponibilités.</td>
+              <td>Outil de gestion du cabinet</td>
+            </tr>
+            <tr>
+              <td><strong>Tests</strong></td>
+              <td>Tests automatisés de la base et des règles métier, contrôle qualité, build de production.</td>
+              <td>114 tests automatisés au vert</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>Compétences mobilisées</h3>
+        <div class="grid-3">
+          <div class="card" style="margin-bottom: 0">
+            <h4>Bases de données</h4>
+            <p class="small" style="margin-bottom: 0">
+              Modélisation relationnelle, contraintes d'intégrité, index, fonctions SQL, sécurité au
+              niveau des lignes.
+            </p>
+          </div>
+          <div class="card" style="margin-bottom: 0">
+            <h4>Développement web</h4>
+            <p class="small" style="margin-bottom: 0">
+              Rendu côté serveur, composants réutilisables, formulaires validés, design responsive
+              et accessible.
+            </p>
+          </div>
+          <div class="card" style="margin-bottom: 0">
+            <h4>Qualité</h4>
+            <p class="small" style="margin-bottom: 0">
+              Tests automatisés, typage strict, analyse statique du code, documentation du projet.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+    <!-- ============================ P.11 CHAPITRE D ==================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Le projet</span>
+      </div>
+      <div class="content">
+        <div class="chapter-banner">
+          <div class="label">Chapitre D</div>
+          <h2>Le projet : l'application web DKC</h2>
+        </div>
+
+        <h2 class="section">VII. Problématique et objectifs</h2>
+
+        <h3>Problématique</h3>
+        <p>
+          Comment permettre aux patients de réserver eux-mêmes une séance en ligne, à toute heure,
+          <strong>sans jamais créer de conflit dans l'agenda d'une praticienne unique</strong> qui
+          exerce à la fois au cabinet et à domicile, tout en protégeant les données personnelles de
+          chaque patient ?
+        </p>
+
+        <p>
+          Cette question contient trois difficultés distinctes : la <strong>disponibilité
+          réelle</strong> (n'afficher que des créneaux réellement libres), la
+          <strong>concurrence</strong> (deux patients qui cliquent sur le même créneau au même
+          instant) et la <strong>confidentialité</strong> (un patient ne doit jamais accéder au
+          dossier d'un autre).
+        </p>
+
+        <h3>Objectifs du projet</h3>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Pour les patients</h4>
+            <ul class="small" style="margin-bottom: 0">
+              <li>Consulter les prestations, leurs durées et leurs tarifs.</li>
+              <li>Créer un compte et réserver en quelques minutes.</li>
+              <li>Choisir le cabinet ou le domicile selon la prestation.</li>
+              <li>Voir l'état de chaque demande et l'historique des séances.</li>
+              <li>Annuler un rendez-vous tant qu'il n'a pas commencé.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Pour le cabinet</h4>
+            <ul class="small" style="margin-bottom: 0">
+              <li>Voir en un coup d'œil les séances du jour et les demandes en attente.</li>
+              <li>Confirmer, clôturer ou annuler un rendez-vous.</li>
+              <li>Consulter le planning, cabinet et domicile réunis.</li>
+              <li>Gérer les patients, les prestations et les tarifs.</li>
+              <li>Saisir ses horaires, ses congés et ses fermetures.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Exigences imposées dès le départ</h3>
+        <ul>
+          <li>
+            <strong>Aucune donnée inventée</strong> : prestations, tarifs et coordonnées proviennent
+            du cabinet. Une information non fournie reste visiblement absente.
+          </li>
+          <li>
+            <strong>Aucune promesse médicale</strong> : le site décrit une offre de soins, il ne
+            fait ni diagnostic ni promesse de résultat.
+          </li>
+          <li>
+            <strong>Sécurité vérifiable</strong> : les règles doivent être démontrables, et pas
+            seulement affirmées.
+          </li>
+        </ul>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.12 CAHIER DES CHARGES ============ -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Cahier des charges</span>
+      </div>
+      <div class="content">
+        <h2 class="section">VIII. Cahier des charges</h2>
+
+        <h3>Besoins fonctionnels</h3>
+        <table class="compact">
+          <thead>
+            <tr>
+              <th style="width: 10%">Réf.</th>
+              <th style="width: 20%">Module</th>
+              <th>Fonctionnalité attendue</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>F1</td><td>Site public</td><td>Présenter le cabinet, l'offre de soins, l'adresse et le parcours de réservation.</td></tr>
+            <tr><td>F2</td><td>Prestations</td><td>Afficher le catalogue issu de la base, avec filtre par domaine et fiche détaillée.</td></tr>
+            <tr><td>F3</td><td>Comptes</td><td>Inscription, connexion, déconnexion et réinitialisation du mot de passe.</td></tr>
+            <tr><td>F4</td><td>Réservation</td><td>Choisir une prestation, un lieu, une date, puis un créneau réellement disponible.</td></tr>
+            <tr><td>F5</td><td>Domicile</td><td>Exiger une adresse complète pour toute visite à domicile.</td></tr>
+            <tr><td>F6</td><td>Suivi patient</td><td>Rendez-vous à venir, historique, détail et annulation.</td></tr>
+            <tr><td>F7</td><td>Administration</td><td>Tableau de bord, planning du jour, gestion des rendez-vous.</td></tr>
+            <tr><td>F8</td><td>Cycle de vie</td><td>Confirmer une demande, la clôturer une fois réalisée, ou l'annuler.</td></tr>
+            <tr><td>F9</td><td>Patients</td><td>Liste, recherche, fiche détaillée avec historique, activation et désactivation.</td></tr>
+            <tr><td>F10</td><td>Catalogue</td><td>Créer, modifier, activer ou désactiver une prestation.</td></tr>
+            <tr><td>F11</td><td>Disponibilités</td><td>Horaires hebdomadaires et exceptions datées (fermeture, horaires particuliers).</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Exigences non fonctionnelles</h3>
+        <table class="compact">
+          <thead>
+            <tr>
+              <th style="width: 10%">Réf.</th>
+              <th style="width: 24%">Exigence</th>
+              <th>Traduction concrète dans le projet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>N1</td><td>Sécurité</td><td>Contrôles appliqués par la base de données elle-même, pas seulement par l'interface.</td></tr>
+            <tr><td>N2</td><td>Confidentialité</td><td>Chaque patient ne lit que ses propres données ; la praticienne accède au cabinet entier.</td></tr>
+            <tr><td>N3</td><td>Intégrité</td><td>Aucun chevauchement de rendez-vous possible, même en cas de clics simultanés.</td></tr>
+            <tr><td>N4</td><td>Responsive</td><td>Utilisable sur mobile, tablette et ordinateur, avec une navigation adaptée.</td></tr>
+            <tr><td>N5</td><td>Accessibilité</td><td>HTML sémantique, libellés de formulaire, navigation au clavier, contrastes suffisants.</td></tr>
+            <tr><td>N6</td><td>Langue</td><td>Interface entièrement en français, y compris les messages d'erreur.</td></tr>
+            <tr><td>N7</td><td>Fiabilité</td><td>Tests automatisés rejouables et build de production sans erreur.</td></tr>
+            <tr><td>N8</td><td>Maintenabilité</td><td>Code typé, composants réutilisés, base recréable depuis les migrations.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="note small">
+          Le fuseau horaire retenu pour toute l'application est <strong>Africa/Casablanca</strong> :
+          la date et l'heure « du jour » sont calculées sur ce fuseau, afin qu'un serveur situé à
+          l'étranger ne décale jamais les créneaux proposés.
+        </div>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.13 ARCHITECTURE ================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Architecture</span>
+      </div>
+      <div class="content">
+        <h2 class="section">IX. Architecture technique</h2>
+
+        <p>
+          L'application est construite comme un <strong>projet unique</strong> : le même programme
+          rend les pages et exécute le code serveur. Il n'y a donc pas de serveur séparé à
+          maintenir, ce qui simplifie autant le développement que l'hébergement.
+        </p>
+
+        <div class="layer l1">
+          <strong>1 · Navigateur du visiteur</strong> — pages rendues côté serveur, enrichies de
+          quelques composants interactifs (menu, étapes de réservation, filtres, boîtes de dialogue).
+        </div>
+        <div style="text-align: center; color: #4d8bad; font-size: 12pt">▼</div>
+        <div class="layer l2">
+          <strong>2 · Application Next.js</strong> — pages et composants serveur pour la lecture,
+          <em>Server Actions</em> pour toute écriture (inscription, réservation, annulation,
+          administration), plus un contrôle de session avant chaque requête.
+        </div>
+        <div style="text-align: center; color: #4d8bad; font-size: 12pt">▼</div>
+        <div class="layer l3">
+          <strong>3 · Supabase (PostgreSQL 17)</strong> — la base de données, l'authentification et
+          la sécurité par ligne. C'est ici que les règles métier sont réellement appliquées :
+          disponibilité, absence de chevauchement, appartenance des données, rôles.
+        </div>
+
+        <h3>Pourquoi placer la sécurité dans la base de données</h3>
+        <p>
+          La clé publique utilisée par le navigateur est, par nature, visible de tous. Une personne
+          curieuse pourrait donc contacter la base directement, sans passer par le site. Si les
+          contrôles n'existaient que dans les pages, ils seraient contournables. Ils ont donc été
+          placés <strong>dans la base elle-même</strong> : politiques de sécurité par ligne et
+          fonctions SQL qui vérifient l'identité de l'appelant.
+        </p>
+
+        <div class="grid-2">
+          <div class="card tint">
+            <h4>Ce que fait l'application</h4>
+            <ul class="small" style="margin-bottom: 0">
+              <li>Afficher les bonnes pages aux bonnes personnes.</li>
+              <li>Valider les formulaires avant tout envoi en base.</li>
+              <li>Traduire les erreurs techniques en messages en français.</li>
+            </ul>
+          </div>
+          <div class="card sand">
+            <h4>Ce que garantit la base</h4>
+            <ul class="small" style="margin-bottom: 0">
+              <li>Qui a le droit de lire ou d'écrire quelle ligne.</li>
+              <li>Qu'un créneau réservé ne peut pas l'être deux fois.</li>
+              <li>Qu'un rôle ne peut pas être modifié depuis l'application.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="small muted">
+          L'hébergement prévu est Vercel pour l'application et Supabase pour la base : deux services
+          gérés, sans serveur à administrer, ce qui convient à la taille du cabinet.
+        </p>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.14 TECHNOLOGIES ================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Technologies</span>
+      </div>
+      <div class="content">
+        <h2 class="section">X. Technologies utilisées</h2>
+
+        <table class="compact">
+          <thead>
+            <tr>
+              <th style="width: 26%">Technologie</th>
+              <th style="width: 14%">Version</th>
+              <th>Rôle dans le projet</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Next.js</strong></td><td>16.3.5</td><td>Cadre applicatif : pages, rendu serveur, actions serveur, routage.</td></tr>
+            <tr><td><strong>React</strong></td><td>19.2</td><td>Construction des interfaces et des composants réutilisables.</td></tr>
+            <tr><td><strong>TypeScript</strong></td><td>5</td><td>Typage strict : les erreurs sont détectées avant l'exécution.</td></tr>
+            <tr><td><strong>Tailwind CSS</strong></td><td>4</td><td>Mise en forme et système de design (couleurs, espacements, ombres).</td></tr>
+            <tr><td><strong>Supabase</strong></td><td>—</td><td>PostgreSQL géré, authentification et sécurité par ligne.</td></tr>
+            <tr><td><strong>PostgreSQL</strong></td><td>17.6</td><td>Base relationnelle : tables, contraintes, fonctions SQL.</td></tr>
+            <tr><td><strong>Zod</strong></td><td>4</td><td>Validation des données reçues des formulaires, côté serveur.</td></tr>
+            <tr><td><strong>Motion</strong></td><td>13</td><td>Animations sobres : menu, transitions entre étapes, apparitions.</td></tr>
+            <tr><td><strong>Lucide React</strong></td><td>1.47</td><td>Jeu d'icônes cohérent sur l'ensemble de l'interface.</td></tr>
+            <tr><td><strong>Vitest</strong></td><td>4</td><td>Exécution des tests automatisés.</td></tr>
+            <tr><td><strong>PGlite</strong></td><td>0.5</td><td>PostgreSQL embarqué : teste les migrations réelles sans installation.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Justification de quelques choix</h3>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Un seul projet plutôt que deux</h4>
+            <p class="small" style="margin-bottom: 0">
+              Séparer un site et une interface d'administration aurait dupliqué l'authentification,
+              les composants et le déploiement. Un projet unique, organisé en espaces distincts,
+              reste plus simple à comprendre et à maintenir.
+            </p>
+          </div>
+          <div class="card">
+            <h4>Pas de bibliothèque superflue</h4>
+            <p class="small" style="margin-bottom: 0">
+              Aucune bibliothèque de graphiques, de calendrier ou de composants n'a été ajoutée :
+              les besoins étaient couverts par du code simple, plus facile à expliquer et sans
+              dépendance à maintenir.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-4" style="margin-top: 1mm">
+          <div class="stat"><div class="value">94</div><div class="label">fichiers TypeScript</div></div>
+          <div class="stat"><div class="value">8 151</div><div class="label">lignes de code applicatif</div></div>
+          <div class="stat"><div class="value">702</div><div class="label">lignes de SQL</div></div>
+          <div class="stat"><div class="value">31</div><div class="label">routes de l'application</div></div>
+        </div>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.15 MODÈLE DE DONNÉES ============= -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Modèle de données</span>
+      </div>
+      <div class="content">
+        <h2 class="section">XI. Modèle de données</h2>
+
+        <p>
+          La base comporte <strong>cinq tables</strong>. Le schéma reste volontairement réduit :
+          chaque table correspond à une notion réelle du cabinet, et aucune donnée médicale n'y est
+          stockée.
+        </p>
+
+        <div class="grid-2">
+          <div class="entity">
+            <h4>profiles — les comptes</h4>
+            <ul>
+              <li><span class="pk">id</span> — clé primaire, liée au compte d'authentification</li>
+              <li>full_name, email, phone</li>
+              <li>date_of_birth</li>
+              <li>role : patient | admin</li>
+              <li>is_active — compte actif ou désactivé</li>
+              <li>created_at, updated_at</li>
+            </ul>
+          </div>
+          <div class="entity">
+            <h4>services — le catalogue</h4>
+            <ul>
+              <li><span class="pk">id</span> — clé primaire</li>
+              <li>name (unique), description, category</li>
+              <li>price, price_type, sessions_included</li>
+              <li>duration_minutes</li>
+              <li>at_cabinet, at_home</li>
+              <li>is_active</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 1mm">
+          <div class="entity">
+            <h4>availability_rules — horaires</h4>
+            <ul>
+              <li><span class="pk">id</span> — clé primaire</li>
+              <li>weekday : 1 = lundi … 7 = dimanche</li>
+              <li>start_time, end_time</li>
+            </ul>
+          </div>
+          <div class="entity">
+            <h4>availability_exceptions — exceptions</h4>
+            <ul>
+              <li><span class="pk">id</span> — clé primaire</li>
+              <li>date</li>
+              <li>is_closed — journée fermée</li>
+              <li>start_time, end_time, reason</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="entity" style="margin-top: 3mm">
+          <h4>appointments — les rendez-vous</h4>
+          <div class="grid-2" style="gap: 0">
+            <ul>
+              <li><span class="pk">id</span> — clé primaire</li>
+              <li><em>patient_id</em> → profiles (clé étrangère)</li>
+              <li><em>service_id</em> → services (clé étrangère)</li>
+              <li>appointment_date, start_time, end_time</li>
+              <li>location_type : cabinet | home</li>
+            </ul>
+            <ul>
+              <li>home_address — obligatoire si domicile</li>
+              <li>status : pending | confirmed | completed | cancelled</li>
+              <li>patient_notes</li>
+              <li>cancelled_by, cancelled_at</li>
+              <li>slot — intervalle calculé automatiquement</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="small muted" style="margin-top: 2mm">
+          Relations : un <strong>profil</strong> possède plusieurs <strong>rendez-vous</strong> ; une
+          <strong>prestation</strong> est utilisée par plusieurs <strong>rendez-vous</strong>. Les
+          deux clés étrangères sont en <em>restriction de suppression</em> : ni un patient ni une
+          prestation liés à un historique ne peuvent être supprimés.
+        </p>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.16 RÈGLES DU MODÈLE ============== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Modèle de données</span>
+      </div>
+      <div class="content">
+        <h3>Contraintes d'intégrité posées dans la base</h3>
+        <table class="compact">
+          <thead>
+            <tr>
+              <th style="width: 30%">Contrainte</th>
+              <th>Ce qu'elle empêche</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Nom de prestation unique</strong></td><td>Deux prestations portant exactement le même nom.</td></tr>
+            <tr><td><strong>Durée multiple de 15 min</strong></td><td>Des durées incohérentes avec le pas de l'agenda (15 à 480 minutes).</td></tr>
+            <tr><td><strong>Au moins un lieu</strong></td><td>Une prestation proposée ni au cabinet ni à domicile.</td></tr>
+            <tr><td><strong>Adresse si domicile</strong></td><td>Une visite à domicile enregistrée sans adresse exploitable.</td></tr>
+            <tr><td><strong>Début avant fin</strong></td><td>Un créneau ou un horaire d'ouverture incohérent.</td></tr>
+            <tr><td><strong>Cohérence de l'annulation</strong></td><td>Un rendez-vous annulé sans date d'annulation, ou l'inverse.</td></tr>
+            <tr><td><strong>Exclusion de chevauchement</strong></td><td>Deux rendez-vous actifs qui se chevauchent dans le temps.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Le cycle de vie d'un rendez-vous</h3>
+        <div class="flow">
+          <div class="step"><span class="n">1</span><br /><strong>En attente</strong><br /><span class="small">créé par le patient</span></div>
+          <div class="step"><span class="n">2</span><br /><strong>Confirmé</strong><br /><span class="small">validé par le cabinet</span></div>
+          <div class="step"><span class="n">3</span><br /><strong>Terminé</strong><br /><span class="small">séance réalisée</span></div>
+          <div class="step" style="border-color: #e7c9c9; background: #fdf6f6">
+            <span class="n" style="background: #b45454">✕</span><br /><strong>Annulé</strong><br />
+            <span class="small">par le patient ou le cabinet</span>
+          </div>
+        </div>
+
+        <p>
+          Ces transitions ne sont pas de simples libellés : elles sont <strong>vérifiées par la base
+          de données</strong>. Un rendez-vous ne peut pas passer directement de « en attente » à
+          « terminé », et il ne peut être marqué « terminé » qu'à partir du moment où la séance a
+          commencé. Une tentative de transition invalide est refusée, quelle que soit son origine.
+        </p>
+
+        <h3>Pourquoi cette rigueur</h3>
+        <p>
+          Dans un cabinet, l'état d'un rendez-vous est une information qui engage : le patient
+          s'organise, la praticienne bloque un créneau. En faisant appliquer ces règles par la base,
+          on garantit que l'historique reste cohérent, même si l'interface évolue ou si une requête
+          arrive par un autre chemin.
+        </p>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.17 MOTEUR RDV ==================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Moteur de rendez-vous</span>
+      </div>
+      <div class="content">
+        <h2 class="section">XII. Le moteur de rendez-vous</h2>
+
+        <p>
+          C'est le cœur technique du projet. Trois fonctions SQL portent l'ensemble de la logique :
+          l'une <strong>calcule les créneaux libres</strong>, les deux autres
+          <strong>réservent</strong> et <strong>modifient l'état</strong> d'un rendez-vous.
+        </p>
+
+        <h3>Comment un créneau est calculé</h3>
+        <div class="flow">
+          <div class="step"><span class="n">1</span><br />Horaires du jour<br /><span class="small">exception si elle existe, sinon horaires habituels</span></div>
+          <div class="step"><span class="n">2</span><br />Découpage<br /><span class="small">toutes les 30 minutes</span></div>
+          <div class="step"><span class="n">3</span><br />Durée<br /><span class="small">la séance doit tenir entièrement</span></div>
+          <div class="step"><span class="n">4</span><br />Filtrage<br /><span class="small">créneaux pris ou trop proches retirés</span></div>
+        </div>
+
+        <table class="compact">
+          <thead>
+            <tr><th style="width: 34%">Règle</th><th style="width: 18%">Valeur</th><th>Raison</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Pas de l'agenda</td><td>30 minutes</td><td>Rythme naturel des séances du cabinet.</td></tr>
+            <tr><td>Délai minimum</td><td>2 heures</td><td>Laisser au cabinet le temps de s'organiser.</td></tr>
+            <tr><td>Horizon de réservation</td><td>60 jours</td><td>Éviter des réservations trop lointaines et incertaines.</td></tr>
+            <tr><td>Rendez-vous à venir</td><td>10 maximum</td><td>Limiter les réservations abusives depuis un même compte.</td></tr>
+            <tr><td>Annulation</td><td>jusqu'au début</td><td>Libérer le créneau pour un autre patient.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Une seule définition de « créneau disponible »</h3>
+        <p>
+          La même fonction sert à <strong>afficher</strong> les créneaux et à
+          <strong>valider</strong> la réservation. Il est donc impossible que l'affichage et le
+          contrôle divergent : un créneau qui n'apparaît pas dans la liste sera refusé s'il est
+          demandé directement.
+        </p>
+
+        <h3>Le cas des clics simultanés</h3>
+        <p>
+          Si deux patients réservent le même créneau au même instant, les deux vérifications peuvent
+          réussir en même temps. La protection ne repose donc pas sur la vérification, mais sur une
+          <strong>contrainte d'exclusion</strong> posée dans la table : PostgreSQL refuse
+          physiquement l'enregistrement du second rendez-vous. Le patient concerné reçoit alors un
+          message clair l'invitant à choisir un autre horaire.
+        </p>
+
+        <div class="note small">
+          Cette contrainte porte sur l'intervalle de temps, sans distinction de lieu : une séance au
+          cabinet et une visite à domicile ne peuvent donc jamais se chevaucher, ce qui correspond
+          exactement à la réalité d'une praticienne unique.
+        </div>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.18 SÉCURITÉ ====================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Sécurité</span>
+      </div>
+      <div class="content">
+        <h2 class="section">XIII. La sécurité de l'application</h2>
+
+        <h3>Authentification</h3>
+        <p>
+          Les mots de passe ne sont jamais gérés par l'application : ils sont confiés au service
+          d'authentification de Supabase, qui les stocke sous forme chiffrée. L'application ne
+          manipule qu'une session, conservée dans un cookie et renouvelée automatiquement.
+        </p>
+
+        <h3>Trois niveaux de protection</h3>
+        <div class="layer l1">
+          <strong>Niveau 1 — Navigation.</strong> Un visiteur non connecté qui ouvre une page privée
+          est redirigé vers la page de connexion correspondante, en conservant sa destination.
+        </div>
+        <div class="layer l2">
+          <strong>Niveau 2 — Contrôle serveur.</strong> Chaque espace vérifie le rôle avant
+          d'afficher quoi que ce soit : un patient est renvoyé vers son espace, un compte désactivé
+          est déconnecté.
+        </div>
+        <div class="layer l3">
+          <strong>Niveau 3 — Base de données.</strong> Les politiques de sécurité par ligne et les
+          fonctions SQL appliquent les mêmes règles, même si la requête ne vient pas du site. C'est
+          le niveau réellement protecteur.
+        </div>
+
+        <h3>Règles de confidentialité appliquées</h3>
+        <table class="compact">
+          <thead>
+            <tr><th style="width: 40%">Risque</th><th>Protection mise en place</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Lire le dossier d'un autre patient</td><td>Chaque lecture est filtrée sur l'identifiant de la session ; un autre identifiant ne renvoie rien.</td></tr>
+            <tr><td>Annuler le rendez-vous d'autrui</td><td>La fonction d'annulation vérifie le propriétaire et répond « introuvable », sans révéler l'existence du rendez-vous.</td></tr>
+            <tr><td>Devenir administrateur</td><td>Toute inscription crée un patient ; un déclencheur refuse toute modification du rôle via l'application.</td></tr>
+            <tr><td>Réserver pour quelqu'un d'autre</td><td>L'identité du patient est prise dans la session, jamais dans les données envoyées par le navigateur.</td></tr>
+            <tr><td>Écrire directement dans l'agenda</td><td>Les patients n'ont aucun droit d'écriture sur la table des rendez-vous : tout passe par les fonctions contrôlées.</td></tr>
+            <tr><td>Accéder à l'administration</td><td>La page de connexion administrateur refuse et déconnecte tout compte non administrateur.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Validation et messages d'erreur</h3>
+        <p>
+          Toutes les données reçues d'un formulaire sont validées côté serveur avant d'atteindre la
+          base. Les erreurs techniques ne sont jamais affichées telles quelles : elles sont
+          traduites en messages compréhensibles en français, tandis que le détail reste dans les
+          journaux du serveur, sans mot de passe ni adresse e-mail.
+        </p>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.19 SITE PUBLIC 1 ================= -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Réalisation</span>
+      </div>
+      <div class="content">
+        <h2 class="section">XIV. Réalisation : le site public</h2>
+
+        <p>
+          Le site public présente le cabinet et conduit le visiteur vers la prise de rendez-vous. La
+          charte graphique reprend les couleurs du logo DKC, avec une mise en page aérée et un
+          vocabulaire volontairement sobre, sans promesse médicale.
+        </p>
+
+        <figure>
+          <img src="assets/shot-home.png" alt="Page d'accueil du site DKC" />
+          <figcaption>Figure 1 — Page d'accueil : message principal et accès direct à la réservation.</figcaption>
+        </figure>
+
+        <p class="small">
+          L'accueil enchaîne ensuite plusieurs sections : l'approche du cabinet, un aperçu des
+          prestations <strong>chargées depuis la base de données</strong>, les avantages pratiques
+          (suivi personnalisé, domicile, réservation en ligne), un appel à la réservation, une
+          présentation du cabinet et les informations de contact.
+        </p>
+
+        <div class="grid-3">
+          <div class="card" style="margin-bottom: 0">
+            <h4>Navigation</h4>
+            <p class="small" style="margin-bottom: 0">
+              Menu fixe sur ordinateur, menu déroulant sur mobile. Un patient connecté voit
+              « Mon espace » au lieu de « Connexion ».
+            </p>
+          </div>
+          <div class="card" style="margin-bottom: 0">
+            <h4>Animations</h4>
+            <p class="small" style="margin-bottom: 0">
+              Apparitions au défilement et transitions courtes, désactivées si le visiteur demande
+              moins d'animations.
+            </p>
+          </div>
+          <div class="card" style="margin-bottom: 0">
+            <h4>Référencement</h4>
+            <p class="small" style="margin-bottom: 0">
+              Titres et descriptions par page, plan du site, et exclusion des espaces privés de
+              l'indexation.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.20 SITE PUBLIC 2 ================= -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Réalisation</span>
+      </div>
+      <div class="content">
+        <h3>La page des prestations</h3>
+        <p class="small">
+          Les 18 prestations proviennent de la base : catégorie, durée, tarif et lieux sont affichés
+          tels qu'ils y sont enregistrés. Les filtres par domaine indiquent le nombre réel de
+          prestations de chaque catégorie.
+        </p>
+
+        <figure>
+          <img src="assets/shot-services-tall.png" alt="Page des prestations avec filtres par domaine" style="max-height: 168mm; object-fit: cover; object-position: top" />
+          <figcaption>Figure 2 — Catalogue filtrable, alimenté par la base de données.</figcaption>
+        </figure>
+
+        <div class="grid-2">
+          <div class="card" style="margin-bottom: 0">
+            <h4>Fiche d'une prestation</h4>
+            <p class="small" style="margin-bottom: 0">
+              Chaque prestation dispose d'une page dédiée rappelant sa durée, son tarif, ses lieux
+              et, pour un forfait, le nombre de séances incluses, avec un bouton de réservation qui
+              pré-sélectionne la prestation.
+            </p>
+          </div>
+          <div class="card" style="margin-bottom: 0">
+            <h4>Contact</h4>
+            <p class="small" style="margin-bottom: 0">
+              L'adresse réelle du cabinet est affichée. Les coordonnées non encore communiquées
+              (téléphone, e-mail) apparaissent comme « à compléter » plutôt que d'être inventées.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.21 ESPACE PATIENT ================ -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Espace patient</span>
+      </div>
+      <div class="content">
+        <h2 class="section">XV. Réalisation : l'espace patient</h2>
+
+        <div class="grid-2">
+          <figure>
+            <img src="assets/shot-register.png" alt="Formulaire d'inscription" />
+            <figcaption>Figure 3 — Création de compte patient.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/shot-login.png" alt="Formulaire de connexion" />
+            <figcaption>Figure 4 — Connexion à l'espace patient.</figcaption>
+          </figure>
+        </div>
+
+        <p class="small">
+          L'inscription demande le nom, l'e-mail, le téléphone et un mot de passe d'au moins huit
+          caractères comprenant une lettre et un chiffre. Le compte est créé immédiatement et le
+          patient arrive directement sur son tableau de bord.
+        </p>
+
+        <h3>La réservation en quatre étapes</h3>
+        <div class="flow">
+          <div class="step"><span class="n">1</span><br /><strong>Prestation</strong><br /><span class="small">classée par domaine, durée et tarif</span></div>
+          <div class="step"><span class="n">2</span><br /><strong>Lieu</strong><br /><span class="small">cabinet ou domicile, adresse exigée</span></div>
+          <div class="step"><span class="n">3</span><br /><strong>Date et heure</strong><br /><span class="small">créneaux réellement libres</span></div>
+          <div class="step"><span class="n">4</span><br /><strong>Confirmation</strong><br /><span class="small">récapitulatif et message facultatif</span></div>
+        </div>
+
+        <p>
+          Seuls les lieux réellement proposés par la prestation choisie sont sélectionnables. Les
+          créneaux sont demandés au serveur à chaque changement de date, et un indicateur de
+          chargement puis un message explicite s'affichent lorsqu'aucun créneau n'est libre.
+        </p>
+
+        <h3>Le suivi des rendez-vous</h3>
+        <ul>
+          <li><strong>Tableau de bord</strong> : prochain rendez-vous mis en avant, compteurs, rendez-vous à venir et historique récent.</li>
+          <li><strong>Mes rendez-vous</strong> : onglets « à venir », « historique » et « tous ».</li>
+          <li><strong>Détail</strong> : prestation, date, horaire, lieu, adresse, message envoyé et état.</li>
+          <li><strong>Annulation</strong> : proposée uniquement si elle est encore possible, avec une confirmation explicite.</li>
+          <li><strong>Profil</strong> : modification du nom, du téléphone, de la date de naissance et du mot de passe.</li>
+        </ul>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.22 ESPACE ADMIN ================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Espace administrateur</span>
+      </div>
+      <div class="content">
+        <h2 class="section">XVI. Réalisation : l'espace administrateur</h2>
+
+        <p>
+          L'espace réservé à la praticienne adopte une présentation plus dense que le site public :
+          barre latérale sombre, tableaux compacts et actions directement accessibles depuis les
+          listes.
+        </p>
+
+        <table class="compact">
+          <thead>
+            <tr><th style="width: 26%">Écran</th><th>Contenu et actions</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Tableau de bord</strong></td><td>Séances du jour, demandes en attente, rendez-vous à venir, confirmés, terminés et nombre de patients ; séances du jour et demandes à confirmer avec actions immédiates.</td></tr>
+            <tr><td><strong>Planning du jour</strong></td><td>Déroulé horaire d'une journée, cabinet et domicile réunis, navigation d'un jour à l'autre et rappel des horaires d'ouverture.</td></tr>
+            <tr><td><strong>Rendez-vous</strong></td><td>Filtres par état, par période et par prestation ; confirmation, clôture et annulation.</td></tr>
+            <tr><td><strong>Patients</strong></td><td>Recherche par nom, e-mail ou téléphone ; fiche avec coordonnées et historique complet ; activation ou désactivation du compte.</td></tr>
+            <tr><td><strong>Prestations</strong></td><td>Création, modification, activation et désactivation, avec contrôle des durées et des tarifs.</td></tr>
+            <tr><td><strong>Disponibilités</strong></td><td>Horaires hebdomadaires et exceptions datées : journée fermée ou horaires particuliers.</td></tr>
+            <tr><td><strong>Mon compte</strong></td><td>Informations du compte et changement de mot de passe.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Des actions sûres par construction</h3>
+        <p>
+          Seules les actions réellement autorisées sont proposées : le bouton « Marquer terminé »
+          n'apparaît qu'une fois la séance commencée, et un rendez-vous déjà terminé ou annulé
+          n'offre plus aucune action. Même si une action interdite était tentée, la base de données
+          la refuserait.
+        </p>
+
+        <div class="note small">
+          <strong>Désactiver n'est pas supprimer.</strong> Qu'il s'agisse d'un patient ou d'une
+          prestation, la désactivation conserve l'intégralité de l'historique : les séances passées
+          restent consultables et exploitables.
+        </div>
+
+        <div class="card" style="border-style: dashed; text-align: center; color: #64757e">
+          <p class="small" style="margin: 0">
+            <strong>Emplacement réservé aux captures de l'espace patient et de l'espace
+            administrateur</strong><br />
+            Ces écrans nécessitent une connexion à un compte réel : les captures sont à réaliser
+            depuis votre navigateur, puis à insérer ici.
+          </p>
+        </div>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.23 TESTS ========================= -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Tests et qualité</span>
+      </div>
+      <div class="content">
+        <h2 class="section">XVII. Tests et qualité</h2>
+
+        <p>
+          Les règles de sécurité et de réservation ne se vérifient pas à l'œil : elles sont couvertes
+          par des <strong>tests automatisés</strong> rejouables à tout moment. Les tests de base de
+          données exécutent les <em>vraies</em> migrations dans un PostgreSQL embarqué, sans
+          installation particulière.
+        </p>
+
+        <div class="grid-4">
+          <div class="stat"><div class="value">114</div><div class="label">tests automatisés</div></div>
+          <div class="stat"><div class="value">28</div><div class="label">tests de base de données</div></div>
+          <div class="stat"><div class="value">86</div><div class="label">tests unitaires</div></div>
+          <div class="stat"><div class="value">0</div><div class="label">test en échec</div></div>
+        </div>
+
+        <h3>Exemples de comportements vérifiés</h3>
+        <table class="compact">
+          <thead>
+            <tr><th style="width: 30%">Domaine</th><th>Vérification automatisée</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Rôles</td><td>Une inscription crée toujours un patient, même si le formulaire tente d'imposer un rôle.</td></tr>
+            <tr><td>Rôles</td><td>Ni un patient ni un administrateur ne peuvent modifier un rôle via l'application.</td></tr>
+            <tr><td>Confidentialité</td><td>Un patient ne lit pas le profil ni les rendez-vous d'un autre patient.</td></tr>
+            <tr><td>Réservation</td><td>Un créneau réservé disparaît de la liste, et tout chevauchement est refusé.</td></tr>
+            <tr><td>Réservation</td><td>Cabinet et domicile partagent le même agenda.</td></tr>
+            <tr><td>Intégrité</td><td>La base rejette elle-même deux rendez-vous actifs qui se chevauchent.</td></tr>
+            <tr><td>Annulation</td><td>Annuler libère le créneau ; annuler le rendez-vous d'autrui répond « introuvable ».</td></tr>
+            <tr><td>Administration</td><td>Les transitions d'état invalides sont refusées.</td></tr>
+            <tr><td>Catalogue</td><td>Une prestation utilisée par un rendez-vous ne peut pas être supprimée.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Contrôles complémentaires</h3>
+        <table class="compact">
+          <thead>
+            <tr><th style="width: 34%">Contrôle</th><th style="width: 22%">Résultat</th><th>Objet</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Analyse statique du code</td><td>Aucun avertissement</td><td>Qualité et bonnes pratiques.</td></tr>
+            <tr><td>Vérification des types</td><td>Aucune erreur</td><td>Cohérence entre le code et la base.</td></tr>
+            <tr><td>Build de production</td><td>31 routes générées</td><td>Application prête à être déployée.</td></tr>
+            <tr><td>Affichage mobile</td><td>Aucun débordement</td><td>Lisibilité sur écran étroit.</td></tr>
+          </tbody>
+        </table>
+
+        <p class="small muted">
+          Pour s'assurer que ces tests détectent réellement un problème, la protection empêchant le
+          changement de rôle a été volontairement désactivée : trois tests sont immédiatement passés
+          au rouge, puis la protection a été rétablie.
+        </p>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.24 DIFFICULTÉS =================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Chapitre D · Difficultés</span>
+      </div>
+      <div class="content">
+        <h2 class="section">XVIII. Difficultés rencontrées et solutions</h2>
+
+        <h3>1. Empêcher réellement la double réservation</h3>
+        <p>
+          Une première approche vérifiait la disponibilité avant d'enregistrer. Elle laissait passer
+          le cas de deux réservations simultanées. La solution retenue déplace la garantie dans la
+          base : une contrainte d'exclusion rend le chevauchement physiquement impossible, et
+          l'erreur est transformée en message compréhensible pour le patient.
+        </p>
+
+        <h3>2. Les horaires et le fuseau</h3>
+        <p>
+          Un serveur hébergé à l'étranger ne vit pas à l'heure marocaine. Une date « du jour »
+          calculée côté serveur pouvait donc décaler les créneaux. La date et l'heure de référence
+          sont désormais calculées sur le fuseau <em>Africa/Casablanca</em>, et des tests figent une
+          date pour vérifier ce comportement.
+        </p>
+
+        <h3>3. Une erreur d'inscription trompeuse</h3>
+        <p>
+          L'inscription échouait avec une erreur « 404 » incompréhensible. L'analyse a montré que
+          l'adresse du projet de base de données avait été saisie avec un suffixe technique
+          superflu : les demandes d'authentification pointaient donc vers une adresse inexistante.
+          La lecture de la configuration corrige désormais ce cas, et un message explicite apparaît
+          si une variable d'environnement est absente.
+        </p>
+
+        <h3>4. Une animation qui masquait le contenu</h3>
+        <p>
+          Les sections apparaissaient au défilement grâce à une animation. Lorsque celle-ci ne
+          s'exécutait pas, le contenu restait invisible. L'animation a été reconstruite pour
+          « échouer du bon côté » : le contenu est visible par défaut, n'est jamais masqué s'il est
+          déjà à l'écran, et réapparaît automatiquement au bout de deux secondes.
+        </p>
+
+        <h3>5. Une imbrication HTML invalide</h3>
+        <p>
+          La carte d'une prestation produisait un élément de liste à l'intérieur d'un autre, ce que
+          le navigateur corrige silencieusement, provoquant un désaccord entre le rendu serveur et
+          le rendu client. La carte ne produit plus l'élément de liste : cette responsabilité revient
+          à la page qui l'affiche.
+        </p>
+
+        <div class="note small">
+          <strong>Ce que ces incidents ont appris.</strong> Un contrôle placé au bon endroit vaut
+          mieux que plusieurs contrôles bien intentionnés : la base de données pour l'intégrité, le
+          serveur pour la validation, l'interface pour le confort. Et surtout, qu'un message
+          d'erreur trompeur coûte plus de temps qu'une panne franche.
+        </div>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.25 CONCLUSION ==================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Conclusion</span>
+      </div>
+      <div class="content">
+        <h2 class="section">Conclusion</h2>
+
+        <p class="lead">
+          Ce stage au sein du cabinet DKC — Diabète Kiné Care a été l'occasion de mener un projet
+          complet, depuis l'observation du besoin réel jusqu'à une application fonctionnelle, testée
+          et prête à être mise en ligne.
+        </p>
+
+        <p>
+          L'immersion dans un cabinet de kinésithérapie a montré que les contraintes les plus
+          structurantes ne sont pas techniques mais organisationnelles : une praticienne unique, un
+          agenda partagé entre le cabinet et les visites à domicile, des patients qui ont besoin de
+          savoir rapidement si leur demande est acceptée. Traduire ces contraintes en règles
+          vérifiables a constitué la partie la plus formatrice du travail.
+        </p>
+
+        <p>
+          Sur le plan technique, le projet m'a permis de mettre en pratique l'ensemble des
+          compétences acquises en formation : modélisation relationnelle, écriture de fonctions SQL,
+          sécurité des données, développement d'interfaces modernes et responsives, validation des
+          saisies et tests automatisés. J'en retiens particulièrement une conviction :
+          <strong>une règle de gestion importante doit être appliquée par la base de données</strong>,
+          car c'est le seul endroit qu'aucune requête ne peut contourner.
+        </p>
+
+        <p>
+          L'application livrée couvre le site public, la prise de rendez-vous, l'espace patient et
+          l'espace d'administration du cabinet. Elle est accompagnée de 114 tests automatisés, d'une
+          base de données reproductible depuis ses migrations et d'une documentation permettant à
+          une autre personne de reprendre le projet.
+        </p>
+
+        <h3>Perspectives</h3>
+        <ul>
+          <li>La mise en ligne effective, avec le nom de domaine du cabinet.</li>
+          <li>L'ajout d'un assistant conversationnel pour répondre aux questions fréquentes.</li>
+          <li>L'envoi de rappels automatiques avant chaque séance.</li>
+          <li>Le suivi des séances restantes pour les forfaits de dix séances.</li>
+          <li>La saisie d'un rendez-vous par le cabinet pour un patient qui appelle.</li>
+        </ul>
+
+        <p>
+          Au-delà des aspects techniques, ce stage m'a appris à dialoguer avec une professionnelle
+          qui n'est pas informaticienne, à reformuler ses besoins en termes précis, et à assumer des
+          choix simples plutôt que des solutions inutilement complexes.
+        </p>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.26 ANNEXE 1 ====================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Annexes</span>
+      </div>
+      <div class="content">
+        <div class="chapter-banner">
+          <div class="label">Annexes</div>
+          <h2>Extraits techniques du projet</h2>
+        </div>
+
+        <h2 class="section">Annexe 1 — La contrainte anti double réservation</h2>
+        <p class="small">
+          Extrait de la table <code>appointments</code>. La colonne <code>slot</code> est calculée
+          automatiquement par la base ; la contrainte interdit tout chevauchement entre deux
+          rendez-vous actifs.
+        </p>
+        <pre><span class="c">-- Intervalle de temps du rendez-vous, calculé par la base</span>
+slot tsrange <span class="k">generated always as</span> (
+  tsrange(appointment_date + start_time, appointment_date + end_time, <span class="s">'[)'</span>)
+) <span class="k">stored</span>,
+
+<span class="c">-- Deux rendez-vous actifs ne peuvent jamais se chevaucher,</span>
+<span class="c">-- quel que soit le lieu : la praticienne est seule.</span>
+<span class="k">constraint</span> appointments_no_overlap <span class="k">exclude using</span> gist (slot <span class="k">with</span> &amp;&amp;)
+  <span class="k">where</span> (status <span class="k">in</span> (<span class="s">'pending'</span>, <span class="s">'confirmed'</span>))</pre>
+
+        <h2 class="section">Annexe 2 — Le calcul des créneaux disponibles</h2>
+        <p class="small">
+          Extrait simplifié de la fonction <code>get_available_slots</code>, utilisée à la fois pour
+          afficher les créneaux et pour valider une réservation.
+        </p>
+        <pre><span class="k">with</span> windows <span class="k">as</span> (
+  <span class="c">-- 1. Une exception datée remplace les horaires habituels…</span>
+  <span class="k">select</span> e.start_time, e.end_time <span class="k">from</span> availability_exceptions e
+  <span class="k">where</span> e.date = p_date <span class="k">and not</span> e.is_closed
+  <span class="k">union all</span>
+  <span class="c">-- 2. …sinon, les horaires du jour de la semaine s'appliquent</span>
+  <span class="k">select</span> r.start_time, r.end_time <span class="k">from</span> availability_rules r
+  <span class="k">where</span> r.weekday = <span class="k">extract</span>(isodow <span class="k">from</span> p_date)
+)
+<span class="c">-- 3. Découpage toutes les 30 minutes, la séance devant tenir entièrement</span>
+<span class="k">select</span> g.slot_start::time, (g.slot_start + v_duration)::time
+<span class="k">from</span> windows w
+<span class="k">cross join lateral</span> generate_series(
+  p_date + w.start_time, p_date + w.end_time - v_duration, <span class="s">'30 minutes'</span>) <span class="k">as</span> g(slot_start)
+<span class="c">-- 4. On retire le passé, le délai de 2 h et les créneaux déjà pris</span>
+<span class="k">where</span> g.slot_start &gt;= v_now + <span class="s">'2 hours'</span>
+  <span class="k">and not exists</span> (
+    <span class="k">select</span> 1 <span class="k">from</span> appointments a
+    <span class="k">where</span> a.status <span class="k">in</span> (<span class="s">'pending'</span>, <span class="s">'confirmed'</span>)
+      <span class="k">and</span> a.slot &amp;&amp; tsrange(g.slot_start, g.slot_start + v_duration))</pre>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.27 ANNEXE 3 ====================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Annexes</span>
+      </div>
+      <div class="content">
+        <h2 class="section">Annexe 3 — La sécurité par ligne</h2>
+        <p class="small">
+          Extraits des politiques appliquées à la base : un patient ne voit que ses propres
+          rendez-vous, et n'a aucun droit d'écriture directe sur l'agenda.
+        </p>
+        <pre><span class="c">-- Lecture : ses propres rendez-vous, ou tous pour l'administratrice</span>
+<span class="k">create policy</span> <span class="s">"appointments: read own or admin"</span>
+  <span class="k">on</span> appointments <span class="k">for select to</span> authenticated
+  <span class="k">using</span> (patient_id = (<span class="k">select</span> auth.uid()) <span class="k">or</span> (<span class="k">select</span> is_admin()));
+
+<span class="c">-- Écriture : interdite en direct, tout passe par les fonctions contrôlées</span>
+<span class="k">revoke insert</span>, <span class="k">update</span>, <span class="k">delete on</span> appointments <span class="k">from</span> authenticated;</pre>
+
+        <h2 class="section">Annexe 4 — L'identité vient de la session</h2>
+        <p class="small">
+          Extrait de la fonction de réservation : l'identifiant du patient n'est jamais reçu du
+          navigateur, il est lu depuis la session authentifiée.
+        </p>
+        <pre><span class="k">declare</span> v_uid uuid := auth.uid();   <span class="c">-- identité issue de la session</span>
+<span class="k">begin</span>
+  <span class="k">if</span> v_uid <span class="k">is null then raise exception</span> <span class="s">'DKC_NOT_AUTHENTICATED'</span>; <span class="k">end if</span>;
+
+  <span class="c">-- Le créneau demandé doit figurer parmi les créneaux réellement libres</span>
+  <span class="k">if not exists</span> (
+    <span class="k">select</span> 1 <span class="k">from</span> get_available_slots(p_service_id, p_date) s
+    <span class="k">where</span> s.start_time = p_start_time) <span class="k">then</span>
+    <span class="k">raise exception</span> <span class="s">'DKC_SLOT_UNAVAILABLE'</span>;
+  <span class="k">end if</span>;
+
+  <span class="c">-- Si une réservation simultanée gagne la course, la contrainte la rejette</span>
+  <span class="k">exception when</span> exclusion_violation <span class="k">then</span>
+    <span class="k">raise exception</span> <span class="s">'DKC_SLOT_TAKEN'</span>;</pre>
+
+        <h2 class="section">Annexe 5 — Organisation du projet</h2>
+        <pre>app/          pages du site, espace patient, espace administrateur
+components/   composants réutilisables (interface, réservation, admin)
+lib/          règles, accès aux données, validation, sécurité de session
+supabase/     migrations SQL et catalogue initial des prestations
+tests/        tests unitaires et tests de base de données
+types/        types générés depuis la base de données</pre>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+    <!-- ============================ P.28 GLOSSAIRE ===================== -->
+    <section class="page">
+      <div class="page-head">
+        <span class="left"><img src="assets/logo-dkc.jpg" alt="" />DKC — Rapport de stage</span>
+        <span>Glossaire</span>
+      </div>
+      <div class="content">
+        <h2 class="section">Glossaire</h2>
+        <table class="compact">
+          <thead>
+            <tr><th style="width: 30%">Terme</th><th>Définition</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Base de données relationnelle</strong></td><td>Ensemble de tables liées entre elles par des clés, garantissant la cohérence des données.</td></tr>
+            <tr><td><strong>Clé étrangère</strong></td><td>Colonne qui référence une ligne d'une autre table ; elle empêche les références vides.</td></tr>
+            <tr><td><strong>Contrainte d'exclusion</strong></td><td>Règle interdisant la coexistence de deux lignes qui se recouvrent, ici dans le temps.</td></tr>
+            <tr><td><strong>Sécurité par ligne (RLS)</strong></td><td>Mécanisme filtrant, pour chaque utilisateur, les lignes qu'il a le droit de lire ou d'écrire.</td></tr>
+            <tr><td><strong>Fonction SQL</strong></td><td>Traitement enregistré dans la base et exécuté par elle, avec ses propres contrôles.</td></tr>
+            <tr><td><strong>Server Action</strong></td><td>Fonction exécutée uniquement sur le serveur, appelée par un formulaire de la page.</td></tr>
+            <tr><td><strong>Composant serveur</strong></td><td>Partie d'interface calculée sur le serveur, ce qui allège le travail du navigateur.</td></tr>
+            <tr><td><strong>Migration</strong></td><td>Fichier SQL décrivant une évolution de la base, rejouable pour la recréer à l'identique.</td></tr>
+            <tr><td><strong>Responsive</strong></td><td>Interface qui s'adapte à la taille de l'écran, du téléphone à l'ordinateur.</td></tr>
+            <tr><td><strong>Test automatisé</strong></td><td>Programme vérifiant qu'un comportement attendu reste vrai après chaque modification.</td></tr>
+          </tbody>
+        </table>
+
+        <h2 class="section">Webographie</h2>
+        <table class="compact">
+          <thead>
+            <tr><th style="width: 30%">Ressource</th><th>Usage</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Documentation Next.js</td><td>Rendu serveur, actions serveur, routage et métadonnées.</td></tr>
+            <tr><td>Documentation Supabase</td><td>Authentification, sécurité par ligne et accès aux données.</td></tr>
+            <tr><td>Documentation PostgreSQL</td><td>Contraintes, types intervalle, fonctions et index.</td></tr>
+            <tr><td>Documentation Tailwind CSS</td><td>Système de design et mise en page responsive.</td></tr>
+            <tr><td>Documentation Zod et Vitest</td><td>Validation des données et tests automatisés.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="card tint" style="margin-top: 6mm; text-align: center">
+          <p style="margin: 0">
+            <strong>DKC — Diabète Kiné Care</strong><br />
+            <span class="small">18 Rue Ibnou Rochd, V.N., Étage 1, Bureau 3 — 30000 Fès, Maroc</span>
+          </p>
+        </div>
+      </div>
+      <div class="page-foot"><span>DKC — Diabète Kiné Care</span></div>
+    </section>
+
+  </body>
+</html>

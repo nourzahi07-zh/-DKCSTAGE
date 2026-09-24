@@ -1,0 +1,648 @@
+/* ===========================================================================
+   Rapport de stage DKC - feuille de style d'impression (A4)
+   Palette reprise du logo DKC (bleus) + accents sable, fond crème.
+   =========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap");
+
+:root {
+  --blue-950: #12293a;
+  --blue-900: #1d3f56;
+  --blue-800: #27536e;
+  --blue-700: #336a8b;
+  --blue-500: #4d8bad;
+  --blue-200: #bcd6e5;
+  --blue-100: #dceaf2;
+  --blue-50: #eef5f9;
+
+  --teal: #0f6659;
+  --sand: #c8873f;
+  --sand-100: #f6e8d6;
+
+  --ink-900: #16242c;
+  --ink-700: #3c4c55;
+  --ink-500: #64757e;
+  --ink-300: #a9b6bd;
+  --ink-100: #e5ebee;
+  --cream: #fbf9f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #e9edf0;
+  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  color: var(--ink-900);
+  font-size: 10.6pt;
+  line-height: 1.55;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+/* --- Page ---------------------------------------------------------------- */
+body {
+  counter-reset: page 1;
+}
+
+.page {
+  position: relative;
+  width: 210mm;
+  height: 297mm;
+  padding: 20mm 17mm 16mm;
+  margin: 0 auto 8mm;
+  background: var(--cream);
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+}
+
+.page:last-child {
+  page-break-after: auto;
+}
+
+/* Thin brand bar + discreet corner wash on every content page */
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4mm;
+  background: linear-gradient(90deg, var(--blue-900), var(--blue-500) 60%, var(--sand));
+}
+
+.page-head {
+  position: absolute;
+  top: 8mm;
+  left: 17mm;
+  right: 17mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 7.8pt;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+.page-head img {
+  height: 9mm;
+  width: 9mm;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 2.5mm;
+  vertical-align: middle;
+}
+
+.page-head .left {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--blue-800);
+}
+
+.page-foot {
+  position: absolute;
+  bottom: 9mm;
+  left: 17mm;
+  right: 17mm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 8pt;
+  color: var(--ink-500);
+  border-top: 0.4mm solid var(--ink-100);
+  padding-top: 2mm;
+}
+
+.page-foot::after {
+  counter-increment: page;
+  content: counter(page);
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  color: var(--blue-800);
+}
+
+.content {
+  height: 100%;
+  padding-bottom: 6mm;
+}
+
+/* --- Couverture ---------------------------------------------------------- */
+.cover {
+  padding: 0;
+  background: linear-gradient(160deg, var(--blue-950) 0%, var(--blue-800) 55%, var(--blue-700) 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.cover::before {
+  content: none;
+}
+
+.cover-deco {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.16;
+}
+
+.cover-deco.one {
+  width: 120mm;
+  height: 120mm;
+  right: -40mm;
+  top: -35mm;
+  background: radial-gradient(circle, #ffffff 0%, transparent 70%);
+}
+
+.cover-deco.two {
+  width: 90mm;
+  height: 90mm;
+  left: -30mm;
+  bottom: 30mm;
+  background: radial-gradient(circle, var(--sand) 0%, transparent 70%);
+}
+
+.cover-inner {
+  position: relative;
+  z-index: 2;
+  padding: 18mm 20mm 14mm;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cover-top {
+  text-align: center;
+  font-size: 9pt;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+  color: var(--blue-100);
+  text-transform: uppercase;
+}
+
+.cover-logo {
+  margin: 12mm auto 8mm;
+  width: 52mm;
+  height: 52mm;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8mm 18mm rgba(0, 0, 0, 0.28);
+}
+
+.cover-logo img {
+  width: 46mm;
+  height: 46mm;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cover h1 {
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  font-size: 30pt;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.cover .subtitle {
+  text-align: center;
+  font-size: 12.5pt;
+  color: var(--blue-100);
+  margin-top: 3mm;
+}
+
+.cover .project {
+  margin: 7mm auto 0;
+  padding: 3mm 8mm;
+  border: 0.4mm solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  font-family: "Outfit", sans-serif;
+  font-size: 11pt;
+  letter-spacing: 0.04em;
+}
+
+.cover-meta {
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6mm;
+  font-size: 9.5pt;
+}
+
+.cover-meta h2 {
+  font-family: "Outfit", sans-serif;
+  font-size: 8.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sand-100);
+  margin: 0 0 1.5mm;
+  font-weight: 600;
+}
+
+.cover-meta p {
+  margin: 0 0 1mm;
+  color: #fff;
+}
+
+.cover-jury {
+  grid-column: 1 / -1;
+  border-top: 0.3mm solid rgba(255, 255, 255, 0.25);
+  padding-top: 4mm;
+}
+
+.fill {
+  color: var(--sand-100);
+  border-bottom: 0.3mm dotted rgba(255, 255, 255, 0.5);
+  padding: 0 1mm;
+}
+
+/* --- Typographie --------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Outfit", sans-serif;
+  color: var(--blue-900);
+  margin: 0;
+}
+
+.chapter-banner {
+  background: linear-gradient(120deg, var(--blue-900), var(--blue-700));
+  color: #fff;
+  border-radius: 3mm;
+  padding: 5mm 6mm;
+  margin-bottom: 6mm;
+}
+
+.chapter-banner .label {
+  font-size: 8pt;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue-200);
+}
+
+.chapter-banner h2 {
+  color: #fff;
+  font-size: 17pt;
+  margin-top: 1mm;
+}
+
+h2.section {
+  font-size: 15pt;
+  margin: 0 0 3mm;
+  padding-left: 4mm;
+  border-left: 1.2mm solid var(--sand);
+}
+
+h3 {
+  font-size: 11.5pt;
+  margin: 5mm 0 2mm;
+  color: var(--blue-800);
+}
+
+h4 {
+  font-size: 10pt;
+  margin: 4mm 0 1.5mm;
+  color: var(--teal);
+}
+
+p {
+  margin: 0 0 3mm;
+  text-align: justify;
+}
+
+ul,
+ol {
+  margin: 0 0 3mm;
+  padding-left: 5mm;
+}
+
+li {
+  margin-bottom: 1.2mm;
+}
+
+strong {
+  color: var(--blue-900);
+}
+
+.lead {
+  font-size: 11pt;
+  color: var(--ink-700);
+}
+
+.muted {
+  color: var(--ink-500);
+}
+
+.small {
+  font-size: 9pt;
+}
+
+/* --- Composants ---------------------------------------------------------- */
+.card {
+  background: #fff;
+  border: 0.3mm solid var(--ink-100);
+  border-radius: 3mm;
+  padding: 4mm 5mm;
+  margin-bottom: 4mm;
+}
+
+.card.tint {
+  background: var(--blue-50);
+  border-color: var(--blue-100);
+}
+
+.card.sand {
+  background: var(--sand-100);
+  border-color: #eed9bd;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5mm;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3mm;
+}
+
+.stat {
+  background: #fff;
+  border: 0.3mm solid var(--ink-100);
+  border-top: 1mm solid var(--blue-700);
+  border-radius: 2.5mm;
+  padding: 3.5mm;
+  text-align: center;
+}
+
+.stat .value {
+  font-family: "Outfit", sans-serif;
+  font-size: 19pt;
+  font-weight: 700;
+  color: var(--blue-800);
+  line-height: 1.1;
+}
+
+.stat .label {
+  font-size: 8.3pt;
+  color: var(--ink-500);
+  margin-top: 1mm;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9.2pt;
+  margin-bottom: 4mm;
+}
+
+th {
+  background: var(--blue-900);
+  color: #fff;
+  text-align: left;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  padding: 2mm 3mm;
+  font-size: 9pt;
+}
+
+td {
+  padding: 1.8mm 3mm;
+  border-bottom: 0.25mm solid var(--ink-100);
+  vertical-align: top;
+}
+
+tbody tr:nth-child(even) td {
+  background: #fff;
+}
+
+table.compact td,
+table.compact th {
+  padding: 1.4mm 2.5mm;
+  font-size: 8.8pt;
+}
+
+.tag {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.6mm 2.5mm;
+  font-size: 8pt;
+  font-weight: 600;
+  background: var(--blue-100);
+  color: var(--blue-800);
+}
+
+.tag.sand {
+  background: var(--sand-100);
+  color: #8a5a20;
+}
+
+figure {
+  margin: 0 0 4mm;
+}
+
+figure img {
+  width: 100%;
+  display: block;
+  border: 0.3mm solid var(--ink-100);
+  border-radius: 2.5mm;
+}
+
+figcaption {
+  font-size: 8.5pt;
+  color: var(--ink-500);
+  margin-top: 1.5mm;
+  text-align: center;
+  font-style: italic;
+}
+
+pre {
+  background: var(--blue-950);
+  color: #dbe9f1;
+  border-radius: 2.5mm;
+  padding: 3.5mm 4mm;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 7.8pt;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  margin: 0 0 3mm;
+  overflow: hidden;
+}
+
+pre .c {
+  color: #8fb2c6;
+}
+
+pre .k {
+  color: #f3c380;
+}
+
+pre .s {
+  color: #a8d8b9;
+}
+
+.note {
+  border-left: 1mm solid var(--sand);
+  background: #fff;
+  padding: 3mm 4mm;
+  border-radius: 0 2.5mm 2.5mm 0;
+  font-size: 9.4pt;
+  margin-bottom: 4mm;
+}
+
+/* Sommaire */
+.toc-item {
+  display: flex;
+  align-items: baseline;
+  gap: 2mm;
+  margin-bottom: 2.6mm;
+  font-size: 10.5pt;
+}
+
+.toc-item .dots {
+  flex: 1;
+  border-bottom: 0.3mm dotted var(--ink-300);
+  transform: translateY(-1mm);
+}
+
+.toc-item .num {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  color: var(--blue-800);
+}
+
+.toc-item.chapter {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  color: var(--blue-900);
+  margin-top: 4mm;
+}
+
+.toc-item.sub {
+  padding-left: 6mm;
+  font-size: 9.6pt;
+  color: var(--ink-700);
+}
+
+/* Diagrammes */
+.flow {
+  display: flex;
+  align-items: stretch;
+  gap: 2mm;
+  margin-bottom: 4mm;
+}
+
+.flow .step {
+  flex: 1;
+  background: #fff;
+  border: 0.3mm solid var(--blue-100);
+  border-radius: 2.5mm;
+  padding: 3mm;
+  text-align: center;
+  font-size: 8.6pt;
+}
+
+.flow .step .n {
+  display: inline-flex;
+  width: 6mm;
+  height: 6mm;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--blue-800);
+  color: #fff;
+  font-weight: 700;
+  font-size: 8.5pt;
+  margin-bottom: 1.5mm;
+}
+
+.layer {
+  border-radius: 2.5mm;
+  padding: 3mm 4mm;
+  margin-bottom: 2mm;
+  font-size: 9.2pt;
+}
+
+.layer.l1 {
+  background: var(--blue-50);
+  border: 0.3mm solid var(--blue-200);
+}
+
+.layer.l2 {
+  background: #fff;
+  border: 0.3mm solid var(--ink-100);
+}
+
+.layer.l3 {
+  background: var(--sand-100);
+  border: 0.3mm solid #eed9bd;
+}
+
+.entity {
+  background: #fff;
+  border: 0.3mm solid var(--blue-200);
+  border-radius: 2.5mm;
+  overflow: hidden;
+  font-size: 8.4pt;
+}
+
+.entity h4 {
+  background: var(--blue-800);
+  color: #fff;
+  margin: 0;
+  padding: 1.8mm 3mm;
+  font-size: 9pt;
+}
+
+.entity ul {
+  list-style: none;
+  margin: 0;
+  padding: 2mm 3mm;
+}
+
+.entity li {
+  margin-bottom: 0.8mm;
+}
+
+.entity .pk {
+  color: var(--sand);
+  font-weight: 700;
+}
+
+.screen-only {
+  display: block;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+  .page {
+    margin: 0;
+    box-shadow: none;
+  }
+  .screen-only {
+    display: none;
+  }
+}

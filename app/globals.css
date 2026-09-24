@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/* ===========================================================================
+   DKC design system - defined once, used everywhere.
+   Palette: deep teal (care, medical trust) + warm sand (human warmth)
+   + ink greys. Tailwind v4 reads these tokens and generates the utilities
+   (bg-brand-600, text-ink-700, font-display, shadow-card, animate-rise...).
+   =========================================================================== */
+@theme {
+  /* Brand - teal */
+  --color-brand-50: #eefbf7;
+  --color-brand-100: #d4f5ea;
+  --color-brand-200: #a9ead7;
+  --color-brand-300: #73d8bf;
+  --color-brand-400: #3dbda1;
+  --color-brand-500: #1ea188;
+  --color-brand-600: #12816e;
+  --color-brand-700: #0f6659;
+  --color-brand-800: #105248;
+  --color-brand-900: #0d443d;
+  --color-brand-950: #042724;
+
+  /* Accent - warm sand */
+  --color-sand-50: #fdf8f1;
+  --color-sand-100: #f8ecdb;
+  --color-sand-200: #f0d7b6;
+  --color-sand-300: #e5bc88;
+  --color-sand-400: #d89c5a;
+  --color-sand-500: #cd833c;
+  --color-sand-600: #b96a31;
+  --color-sand-700: #99512b;
+  --color-sand-800: #7d4228;
+  --color-sand-900: #673724;
+
+  /* Neutrals */
+  --color-ink-50: #f6f8f8;
+  --color-ink-100: #eceff0;
+  --color-ink-200: #d6dcde;
+  --color-ink-300: #b2bdc1;
+  --color-ink-400: #87979d;
+  --color-ink-500: #6b7c82;
+  --color-ink-600: #5a686e;
+  --color-ink-700: #4c575c;
+  --color-ink-800: #434b4f;
+  --color-ink-900: #1f2a2e;
+
+  --color-cream: #fbf9f6;
+
+  /* Typography (loaded by app/layout.tsx via next/font) */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+
+  /* Elevation */
+  --shadow-card: 0 1px 2px rgb(15 102 89 / 0.04), 0 8px 24px -12px rgb(15 102 89 / 0.18);
+  --shadow-lift: 0 2px 4px rgb(15 102 89 / 0.06), 0 18px 40px -16px rgb(15 102 89 / 0.28);
+
+  /* Motion */
+  --animate-rise: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  --animate-fade: fade 0.4s ease-out backwards;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  /* One visible, consistent focus ring everywhere (keyboard users). */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-600);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Anchors land below the sticky header. */
+  :target {
+    scroll-margin-top: 6rem;
+  }
+}
+
+/* Scroll reveal (see components/motion/Reveal.tsx). The hidden state is only
+   ever added by JavaScript, so content is visible without it. */
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition:
+      opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* People who ask for less motion get none. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
